@@ -1,21 +1,23 @@
 {
-  "name": "node-study",
+  "name": "project-real",
   "version": "1.0.0",
-  "description": "",
+  "description": "project for study",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "dist": "tsup src --format cjs --dts",
-    "start:dist": "npm run dist && node dist/server.js"
+    "dev": "tsx --watch src/server.ts"
   },
   "keywords": [],
   "author": "Afonso Braga Plentz",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@types/node": "^25.5.2",
+    "@types/express": "^5.0.6",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
   }
 }
