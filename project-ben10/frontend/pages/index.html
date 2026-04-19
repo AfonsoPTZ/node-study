@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben 10 - Aliens API</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Ben 10 - Aliens API</h1>
+        
+        <div class="grid">
+            <!-- CRIAR ALIEN -->
+            <div class="form-box">
+                <h2>➕ Criar Alien</h2>
+                <form id="form-create">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" id="alien-name" placeholder="Ex: XLR8" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Habilidade Especial</label>
+                        <input type="text" id="alien-ability" placeholder="Ex: Super velocidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Força (0-100)</label>
+                        <input type="number" id="alien-strength" min="0" max="100" placeholder="Ex: 60" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Velocidade (0-100)</label>
+                        <input type="number" id="alien-speed" min="0" max="100" placeholder="Ex: 95" required>
+                    </div>
+                    <button type="submit">Criar Alien</button>
+                </form>
+            </div>
+            
+            <!-- ATUALIZAR ALIEN -->
+            <div class="form-box">
+                <h2>✏️ Atualizar Alien</h2>
+                <form id="form-update">
+                    <div class="form-group">
+                        <label>ID do Alien</label>
+                        <input type="number" id="alien-id-update" placeholder="Ex: 1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nome (opcional)</label>
+                        <input type="text" id="alien-name-update" placeholder="Deixe em branco para não alterar">
+                    </div>
+                    <div class="form-group">
+                        <label>Habilidade Especial (opcional)</label>
+                        <input type="text" id="alien-ability-update" placeholder="Deixe em branco para não alterar">
+                    </div>
+                    <div class="form-group">
+                        <label>Força (opcional)</label>
+                        <input type="number" id="alien-strength-update" min="0" max="100" placeholder="Deixe em branco para não alterar">
+                    </div>
+                    <div class="form-group">
+                        <label>Velocidade (opcional)</label>
+                        <input type="number" id="alien-speed-update" min="0" max="100" placeholder="Deixe em branco para não alterar">
+                    </div>
+                    <button type="submit">Atualizar Alien</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- LISTAR ALIENS -->
+        <div class="aliens-list">
+            <h2>👽 Aliens</h2>
+            <div id="aliens-list"></div>
+        </div>
+    </div>
+
+    <!-- Scripts da API -->
+    <script src="../api/aliens/read.js"></script>
+    <script src="../api/aliens/create.js"></script>
+    <script src="../api/aliens/update.js"></script>
+    <script src="../api/aliens/delete.js"></script>
+</body>
+</html>

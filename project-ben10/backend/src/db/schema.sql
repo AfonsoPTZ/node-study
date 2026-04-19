@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS aliens_db;
+
+USE aliens_db;
+
+CREATE TABLE IF NOT EXISTS aliens (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    special_ability VARCHAR(255) NOT NULL,
+    strength INT NOT NULL,
+    speed INT NOT NULL
+);

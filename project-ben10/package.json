@@ -1,23 +1,12 @@
 {
-  "name": "project-real",
+  "name": "project-ben10",
   "version": "1.0.0",
-  "description": "project for study",
-  "main": "index.js",
+  "description": "Ben 10 - Aliens API (Backend + Frontend)",
   "scripts": {
-    "dev": "tsx --watch src/server.ts"
+    "dev": "cd backend && npm run dev",
+    "install-all": "npm install && cd backend && npm install"
   },
-  "keywords": [],
+  "keywords": ["aliens", "api", "ben10"],
   "author": "Afonso Braga Plentz",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "tsup": "^8.5.1",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
-  },
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
-  }
+  "license": "ISC"
 }
