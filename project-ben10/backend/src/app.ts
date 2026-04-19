@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { alienRouterById, alienRouter, alienRouterCreator, alienRouterDelete, alienRouterUpdate } from "./routes/aliens-route";
 
 /**
@@ -11,6 +12,9 @@ function CreateApp() {
 
     // Middleware para parsear JSON no body das requisições
     app.use(express.json());
+
+    // Middleware para permitir requisições de diferentes origens (CORS)
+    app.use(cors());
 
     // Registra rotas para operações com aliens
     app.use(alienRouter);           // GET /aliens

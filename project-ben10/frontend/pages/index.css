@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #1a1a1a;
-    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+    color: #e0e0e0;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .container {
@@ -19,7 +20,10 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #00ff00;
+    color: #60d5ff;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .grid {
@@ -30,16 +34,18 @@ h1 {
 }
 
 .form-box {
-    background: #222;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #00ff00;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(96, 213, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .form-box h2 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: #00ff00;
+    color: #60d5ff;
+    font-weight: 500;
 }
 
 .form-group {
@@ -54,54 +60,69 @@ label {
 
 input {
     width: 100%;
-    padding: 8px;
-    background: #333;
-    border: 1px solid #00ff00;
-    color: #fff;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(96, 213, 255, 0.3);
+    color: #e0e0e0;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
 input:focus {
     outline: none;
-    box-shadow: 0 0 5px #00ff00;
+    background: rgba(96, 213, 255, 0.1);
+    border-color: rgba(96, 213, 255, 0.6);
+    box-shadow: 0 0 10px rgba(96, 213, 255, 0.2);
 }
 
 button {
-    background: #00ff00;
-    color: #000;
+    background: linear-gradient(135deg, #60d5ff 0%, #4ba3d0 100%);
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 11px 20px;
+    border-radius: 6px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     width: 100%;
+    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 button:hover {
-    background: #00cc00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(96, 213, 255, 0.3);
 }
 
 .aliens-list {
-    background: #222;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #00ff00;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(96, 213, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .aliens-list h2 {
     margin-bottom: 15px;
-    color: #00ff00;
+    color: #60d5ff;
+    font-weight: 500;
 }
 
 .alien-item {
-    background: #333;
+    background: rgba(255, 255, 255, 0.03);
     padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-left: 3px solid rgba(96, 213, 255, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.alien-item:hover {
+    background: rgba(96, 213, 255, 0.08);
+    border-left-color: rgba(96, 213, 255, 0.8);
 }
 
 .alien-info {
@@ -109,47 +130,53 @@ button:hover {
 }
 
 .alien-name {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 16px;
-    color: #00ff00;
+    color: #60d5ff;
 }
 
 .alien-details {
     font-size: 12px;
-    margin-top: 5px;
-    color: #aaa;
+    margin-top: 6px;
+    color: #a0a0a0;
+    line-height: 1.5;
 }
 
 .alien-actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .btn-edit, .btn-delete {
-    padding: 5px 10px;
+    padding: 6px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     width: auto;
+    transition: all 0.3s ease;
 }
 
 .btn-edit {
-    background: #0099ff;
-    color: #fff;
+    background: rgba(96, 213, 255, 0.3);
+    color: #60d5ff;
+    border: 1px solid rgba(96, 213, 255, 0.5);
 }
 
 .btn-edit:hover {
-    background: #0077cc;
+    background: rgba(96, 213, 255, 0.5);
+    border-color: #60d5ff;
 }
 
 .btn-delete {
-    background: #ff3300;
-    color: #fff;
+    background: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.5);
 }
 
 .btn-delete:hover {
-    background: #cc2600;
+    background: rgba(255, 107, 107, 0.5);
+    border-color: #ff6b6b;
 }
 

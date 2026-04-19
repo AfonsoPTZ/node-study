@@ -6,7 +6,11 @@
     "dev": "cd backend && npm run dev",
     "install-all": "npm install && cd backend && npm install"
   },
-  "keywords": ["aliens", "api", "ben10"],
+  "keywords": [
+    "aliens",
+    "api",
+    "ben10"
+  ],
   "author": "Afonso Braga Plentz",
   "license": "ISC"
 }
