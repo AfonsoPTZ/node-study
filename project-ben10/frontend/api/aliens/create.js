@@ -36,7 +36,7 @@ async function criarAlien() {
         }
 
         // Sucesso: mostra mensagem do backend
-        alert(resultado.message || 'Alien criado com sucesso!');
+        alert(resultado.message);
         document.getElementById('form-create')?.reset();
         
         // Carrega lista de aliens

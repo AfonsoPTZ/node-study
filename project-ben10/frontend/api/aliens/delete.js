@@ -18,6 +18,7 @@ async function deletarAlien(id) {
             return;
         }
 
+            
         // Sucesso: mostra mensagem do backend
         alert(resultado.message || 'Alien deletado com sucesso!');
         
