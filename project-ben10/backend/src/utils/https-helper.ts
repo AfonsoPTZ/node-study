@@ -9,45 +9,46 @@ export interface HttpResponse {
 
 /**
  * Helper que retorna uma resposta HTTP 200 (OK)
- * Usado quando a operação foi bem-sucedida
+ * Retorna dados junto com mensagem de sucesso
+ * Message é obrigatória
  */
-export const ok = async (data: any): Promise<HttpResponse> => {
+export const ok = async (data: any, message: string): Promise<HttpResponse> => {
     return {
         statusCode: 200,
-        body: data
+        body: { data, message }
     };
 };
 
 /**
  * Helper que retorna uma resposta HTTP 204 (No Content)
- * Usado quando a operação foi bem-sucedida mas não há conteúdo para retornar
+ * Retorna mensagem de sucesso sem conteúdo
  */
-export const noContent = async (): Promise<HttpResponse> => {
+export const noContent = async (message: string = "Sem conteúdo"): Promise<HttpResponse> => {
     return {
         statusCode: 204,
-        body: null
+        body: { message }
     };
 };
 
 /**
  * Helper que retorna uma resposta HTTP 400 (Bad Request)
- * Usado quando há erro na validação ou dados inválidos
+ * Retorna mensagem de erro
  */
-export const badRequest = async (error: string): Promise<HttpResponse> => {
+export const badRequest = async (message: string): Promise<HttpResponse> => {
     return {
         statusCode: 400,
-        body: { error }
+        body: { message }
     };
 };
 
 /**
  * Helper que retorna uma resposta HTTP 404 (Not Found)
- * Usado quando o recurso solicitado não foi encontrado
+ * Retorna mensagem de erro
  */
-export const notFound = async (error: string): Promise<HttpResponse> => {
+export const notFound = async (message: string): Promise<HttpResponse> => {
     return {
         statusCode: 404,
-        body: { error }
+        body: { message }
     };
 };
 

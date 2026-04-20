@@ -37,19 +37,18 @@ async function atualizarAlien() {
 
         // Se erro na atualização, mostra mensagem
         if (!resposta.ok) {
-            alert(resultado.error || 'Erro ao atualizar alien.');
+            alert(resultado.message || 'Erro ao atualizar alien.');
             return;
         }
 
-        // Sucesso: mostra alerta e limpa formulário
-        alert('Alien atualizado com sucesso!');
+        // Sucesso: mostra mensagem do backend
+        alert(resultado.message || 'Alien atualizado com sucesso!');
         document.getElementById('form-update')?.reset();
         
         // Carrega lista de aliens
         setTimeout(() => carregarAliens(), 500);
 
     } catch (error) {
-        console.error('Erro ao atualizar alien:', error);
         alert('Erro de conexão com o servidor.');
     }
 }

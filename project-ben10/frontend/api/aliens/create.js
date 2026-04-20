@@ -31,19 +31,18 @@ async function criarAlien() {
 
         // Se erro no cadastro, mostra mensagem
         if (!resposta.ok) {
-            alert(resultado.error || 'Erro ao criar alien.');
+            alert(resultado.message || 'Erro ao criar alien.');
             return;
         }
 
-        // Sucesso: mostra alerta e limpa formulário
-        alert('Alien criado com sucesso!');
+        // Sucesso: mostra mensagem do backend
+        alert(resultado.message || 'Alien criado com sucesso!');
         document.getElementById('form-create')?.reset();
         
         // Carrega lista de aliens
         setTimeout(() => carregarAliens(), 500);
 
     } catch (error) {
-        console.error('Erro ao criar alien:', error);
         alert('Erro de conexão com o servidor.');
     }
 }

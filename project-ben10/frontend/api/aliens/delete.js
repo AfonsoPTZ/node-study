@@ -14,18 +14,17 @@ async function deletarAlien(id) {
 
         // Se erro na exclusão, mostra mensagem
         if (!resposta.ok) {
-            alert(resultado.error || 'Erro ao deletar alien.');
+            alert(resultado.message || 'Erro ao deletar alien.');
             return;
         }
 
-        // Sucesso: mostra alerta e recarrega lista
-        alert('Alien deletado com sucesso!');
+        // Sucesso: mostra mensagem do backend
+        alert(resultado.message || 'Alien deletado com sucesso!');
         
         // Carrega lista de aliens
         setTimeout(() => carregarAliens(), 500);
 
     } catch (error) {
-        console.error('Erro ao deletar alien:', error);
         alert('Erro de conexão com o servidor.');
     }
 }

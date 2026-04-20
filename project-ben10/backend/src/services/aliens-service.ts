@@ -11,10 +11,10 @@ const getAlienNameService = async (): Promise<HttpResponse> => {
     const allAliens = await findAllAliens();
 
     if (allAliens && allAliens.length > 0) {
-        return await ok(allAliens);
+        return await ok(allAliens, "Aliens listados com sucesso");
     }
 
-    return await noContent();
+    return await noContent("Nenhum alien encontrado");
 };
 
 /**
@@ -25,29 +25,25 @@ const getAlienNameByIdService = async (id: number): Promise<HttpResponse> => {
     const alienFound = await findAlienById(id);
 
     if (alienFound) {
-        return await ok(alienFound);
+        return await ok(alienFound, "Alienígena encontrado com sucesso");
     }
 
-    return await notFound("Alien not found");
+    return await notFound("Alienígena não encontrado");
 };
 
 /**
  * Cria um novo alienígena no banco de dados
- * Validações adicionais no service além do middleware
+ * Validação delegada ao middleware
  * Retorna 200 (OK) com o alienígena criado ou 400 (Bad Request) se falhar
  */
 const CreateAlienService = async (alien: Alien): Promise<HttpResponse> => {
-    if (!alien || !alien.name || !alien.special_ability) {
-        return await badRequest("Invalid alien data: name and special_ability are required");
-    }
-
     const newAlien = await CreateAlienRepository(alien);
 
     if (newAlien) {
-        return await ok(newAlien);
+       return await ok(newAlien, "Alien ígena criado com sucesso");
     }
 
-    return await badRequest("Failed to create alien");
+    return await badRequest("Falha ao criar alienígena");
 };
 
 /**
@@ -59,16 +55,16 @@ const DeleteAlienService = async (id: number): Promise<HttpResponse> => {
     const alienFound = await findAlienById(id);
 
     if (!alienFound) {
-        return await notFound("Alien not found");
+        return await notFound("Alienígena não encontrado");
     }
 
     const deletedAlien = await DeleteAlienRepository(id);
 
     if (deletedAlien) {
-        return await ok(deletedAlien);
+        return await ok(deletedAlien, "Alienígena deletado com sucesso");
     }
 
-    return await badRequest("Failed to delete alien");
+    return await badRequest("Falha ao deletar alienígena");
 };
 
 /**
@@ -80,20 +76,20 @@ const AlienUpdateService = async (id: number, alienUpdate: Alien): Promise<HttpR
     const alienFound = await findAlienById(id);
 
     if (!alienFound) {
-        return await notFound("Alien not found");
+        return await notFound("Alienígena não encontrado");
     }
 
     if (!alienUpdate || Object.keys(alienUpdate).length === 0) {
-        return await badRequest("At least one field must be provided for update");
+        return await badRequest("Pelo menos um campo deve ser fornecido para atualizar");
     }
 
     const updatedAlien = await UpdateAlienRepository(id, alienUpdate);
 
     if (updatedAlien) {
-        return await ok(updatedAlien);
+        return await ok(updatedAlien, "Alienígena atualizado com sucesso");
     }
 
-    return await badRequest("Failed to update alien");
+    return await badRequest("Falha ao atualizar alienígena");
 };
 
 export { getAlienNameService, getAlienNameByIdService, CreateAlienService, DeleteAlienService, AlienUpdateService };
