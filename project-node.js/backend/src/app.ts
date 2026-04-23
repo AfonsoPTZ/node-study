@@ -16,4 +16,4 @@ function CreateApp(){
 
 }
 
-export default CreateApp();
+export default CreateApp;
