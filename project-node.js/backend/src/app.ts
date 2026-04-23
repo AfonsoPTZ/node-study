@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import { UsuarioRouter } from "./routes/usuario-route"
 
 function CreateApp(){
 
@@ -10,8 +10,7 @@ function CreateApp(){
 
     app.use(cors());
 
-
-    console.log("hello world!")
+    app.use(UsuarioRouter);
 
     return app;
 
