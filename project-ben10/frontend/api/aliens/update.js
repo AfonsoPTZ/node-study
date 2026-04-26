@@ -27,7 +27,7 @@ async function atualizarAlien() {
 
     try {
         // Envia para backend
-        const resposta = await fetch(`http://localhost:3000/aliensUpdate/${id}`, {
+        const resposta = await fetch(`http://127.0.0.1:3000/aliensUpdate/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)

@@ -21,7 +21,7 @@ async function criarAlien() {
 
     try {
         // Envia para backend
-        const resposta = await fetch('http://localhost:3000/aliensCreate', {
+        const resposta = await fetch('http://127.0.0.1:3000/aliensCreate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)

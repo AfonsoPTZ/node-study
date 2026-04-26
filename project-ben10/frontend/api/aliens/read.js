@@ -1,7 +1,7 @@
 async function carregarAliens() {
     try {
         // Busca todos os aliens
-        const resposta = await fetch('http://localhost:3000/aliens');
+        const resposta = await fetch('http://127.0.0.1:3000/aliens');
         
         // Se 204 (sem aliens), não tenta fazer .json()
         if (resposta.status === 204) {

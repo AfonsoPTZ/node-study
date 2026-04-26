@@ -6,7 +6,7 @@ async function deletarAlien(id) {
 
     try {
         // Envia para backend
-        const resposta = await fetch(`http://localhost:3000/aliensDelete/${id}`, {
+        const resposta = await fetch(`http://127.0.0.1:3000/aliensDelete/${id}`, {
             method: 'DELETE'
         });
 
