@@ -11,10 +11,7 @@ async function editaruser() {
     const cpf = document.getElementById("usuario-cpf-edit").value
     const telefone = document.getElementById("usuario-telefone-edit").value
 
-    if (!id || !name || !cpf || !telefone ){
-        alert("preencha os campos")
-        return;
-    }
+
 
     const dados = {
         name,
