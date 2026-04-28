@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
 
-import { getUsuarioService, CreateUserService, DeleteUserService } from "../services/usuario-service";
+import { getUsuarioService, CreateUserService, DeleteUserService, updateUserService} from "../services/usuario-service";
 
 
 
@@ -36,4 +36,18 @@ const DeleteUserControler = async (req : Request, res : Response) =>{
 
 }
 
-export { GetUsuarioControler, CreateUserControler, DeleteUserControler }
+
+
+
+const updateUserControler = async (req : Request, res : Response) =>{
+
+    const { id } = req.params
+    const dados = req.body
+    const data = await updateUserService(Number(id), dados);
+    
+    res.status(data.statusCode).json(data.body);
+
+
+}
+
+export { GetUsuarioControler, CreateUserControler, DeleteUserControler, updateUserControler }

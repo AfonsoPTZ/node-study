@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { UsuarioRouter, CreateUser, DeleteUser } from "./routes/usuario-route"
+import { UsuarioRouter, CreateUser, DeleteUser, updateUser } from "./routes/usuario-route"
 
 function CreateApp(){
 
@@ -13,6 +13,7 @@ function CreateApp(){
     app.use(UsuarioRouter);
     app.use(CreateUser);
     app.use(DeleteUser);
+    app.use(updateUser);
 
     return app;
 

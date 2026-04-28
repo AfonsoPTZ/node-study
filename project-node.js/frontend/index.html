@@ -29,12 +29,40 @@
                             <label class="form-label">telefone</label>
                             <input type="text" class="form-control" id="usuario-telefone" placeholder="41 9 00000000" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="btn-create">Criar Usuario</button>
+                        <button type="submit" class="btn btn-primary">Criar Usuario</button>
                     </form>
                 </div>
             </div>
         </div>
 
+
+        <div class="col-md-6">
+                <div class="card-header">
+                    <h5 class="mb-0">editar Usuarios</h5>
+                </div>
+                <div class="card-body">
+                    <form id="form-edit">
+                        <div class="mb-3">
+                            <label class="form-label">id</label>
+                            <input type="number" class="form-control" id="usuario-id-edit" placeholder="Ex: 0" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="usuario-name-edit" placeholder="Ex: Afonso" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">cpf</label>
+                            <input type="text" class="form-control" id="usuario-cpf-edit" placeholder="Ex: 000.000.000-00" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">telefone</label>
+                            <input type="text" class="form-control" id="usuario-telefone-edit" placeholder="41 9 00000000" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">editar Usuario</button>
+                    </form>
+                </div>
+            </div>
     </div>
 
 
@@ -57,6 +85,7 @@
     <script src="apis/usuarios/read.js"></script>
     <script src="apis/usuarios/create.js"></script>
     <script src="apis/usuarios/delete.js"></script>
+    <script src="apis/usuarios/update.js"></script>
 
 
 

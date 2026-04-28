@@ -32,4 +32,18 @@ const deleteUserRepository = async (id : number): Promise<Usuario> => {
 };
 
 
-export { getUsuarioRepository, CreateUserRepository, deleteUserRepository }
+
+const updateUserRepository = async (id : number, usuario: Usuario): Promise<Usuario> => {
+
+    return await prisma.usuarios.update({
+
+        where: { id },
+        data: usuario
+
+    });
+
+};
+
+
+
+export { getUsuarioRepository, CreateUserRepository, deleteUserRepository, updateUserRepository }
