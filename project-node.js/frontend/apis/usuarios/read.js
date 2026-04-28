@@ -32,6 +32,10 @@ function rederizarusers(usuarios) {
                     <h5 class="card-title mb-3">${usuario.name}</h5>
                     <p class="mb-2"><strong>CPF:</strong> ${usuario.cpf}</p>
                     <p class="mb-0"><strong>Telefone:</strong> ${usuario.telefone}</p>
+                    <div class="d-grid gap-2 d-flex">
+                        <button class="btn btn-primary" onclick="editaruser(${usuario.id})"> Editar</button>
+                        <button class="btn btn-primary" onclick="excluiruser(${usuario.id})"> excluir</button>
+                    </div>
                 </div>
             </div>
         </div>
